@@ -23,6 +23,7 @@ def page_malaria_detector_body():
 
     st.write("---")
 
+    # Upload image(s)
     images_buffer = st.file_uploader('Upload blood smear samples. You may select more than one.',
                                         type='png',accept_multiple_files=True)
    
@@ -46,6 +47,6 @@ def page_malaria_detector_body():
         if not df_report.empty:
             st.success("Analysis Report")
             st.table(df_report)
-            st.markdown(download_dataframe_as_csv(df_report), unsafe_allow_html=True)
+            st.markdown(download_dataframe_as_csv(df_report), unsafe_allow_html=True)  # make report dataframe downloadable as csv for users
 
 
